@@ -21,8 +21,7 @@ a:focus-visible, summary:focus-visible { outline: 3px solid #78a7ff; outline-off
 .navigation, .nav-links, .brand { display: flex; align-items: center; }
 .navigation { min-height: 82px; justify-content: space-between; gap: 24px; }
 .brand { gap: 10px; white-space: nowrap; font-size: 15px; font-weight: 800; letter-spacing: -.5px; }
-.brand-mark { display: flex; align-items: center; justify-content: center; width: 35px; height: 35px; border-radius: 10px; background: var(--blue); color: white; font-size: 20px; letter-spacing: -2px; padding-right: 2px; }
-.brand-mark span { display: inline; }
+.brand-mark { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; }
 .brand-light { font-weight: 500; }
 .brand-dot { color: var(--blue); }
 .nav-links { gap: 34px; font-size: 12px; font-weight: 650; color: #647084; }
@@ -134,7 +133,6 @@ details p { margin: 12px 0 0; }
 
 /* Dark glass and neon palette */
 .site-header { background: rgba(9, 10, 18, .72); border-bottom-color: rgba(199, 205, 232, .12); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-.brand-mark { background: linear-gradient(135deg, var(--blue), #8152ff); color: #fff; box-shadow: 0 0 20px rgba(189, 114, 255, .35); }
 .brand-dot, .nav-contact span, .text-link span, .card-category, .summary span, .footer-star { color: var(--turquoise); }
 .nav-links { color: #c4c6d5; }
 .nav-links a:hover, .text-link:hover, .footer a:hover { color: var(--turquoise); text-shadow: 0 0 12px rgba(85, 244, 227, .48); }
