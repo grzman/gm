@@ -13,13 +13,21 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 const projectGallery = document.getElementById("project-gallery");
 
 if (projectGallery) {
+  const gallery = projectGallery.closest(".project-gallery");
   const projectCards = projectGallery.querySelectorAll(".project-card");
   const previousButton = document.getElementById("project-previous");
   const nextButton = document.getElementById("project-next");
+  const autoplayButton = document.getElementById("project-autoplay");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let pausedByUser = false;
+  let hovered = false;
+  let focused = false;
 
   const updateGalleryButtons = () => {
     previousButton.disabled = projectGallery.scrollLeft <= 1;
     nextButton.disabled = projectGallery.scrollLeft + projectGallery.clientWidth >= projectGallery.scrollWidth - 1;
+    autoplayButton.setAttribute("aria-label", pausedByUser ? "Wznów automatyczne przewijanie" : "Wstrzymaj automatyczne przewijanie");
+    autoplayButton.setAttribute("aria-pressed", String(pausedByUser));
   };
 
   const scrollGallery = (direction) => {
@@ -31,9 +39,37 @@ if (projectGallery) {
     });
   };
 
+  const advanceGallery = () => {
+    const atEnd = projectGallery.scrollLeft + projectGallery.clientWidth >= projectGallery.scrollWidth - 1;
+    if (atEnd) {
+      projectGallery.scrollTo({
+        left: 0,
+        behavior: reducedMotion.matches ? "auto" : "smooth",
+      });
+      return;
+    }
+    scrollGallery(1);
+  };
+
+  const autoplay = window.setInterval(() => {
+    if (!pausedByUser && !hovered && !focused && !document.hidden && !reducedMotion.matches) {
+      advanceGallery();
+    }
+  }, 5000);
+
+  autoplayButton.addEventListener("click", () => {
+    pausedByUser = !pausedByUser;
+    updateGalleryButtons();
+  });
   previousButton.addEventListener("click", () => scrollGallery(-1));
   nextButton.addEventListener("click", () => scrollGallery(1));
   projectGallery.addEventListener("scroll", updateGalleryButtons, { passive: true });
   window.addEventListener("resize", updateGalleryButtons);
+  gallery.addEventListener("pointerenter", () => { hovered = true; });
+  gallery.addEventListener("pointerleave", () => { hovered = false; });
+  gallery.addEventListener("focusin", () => { focused = true; });
+  gallery.addEventListener("focusout", (event) => {
+    focused = gallery.contains(event.relatedTarget);
+  });
   updateGalleryButtons();
 }

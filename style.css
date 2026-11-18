@@ -22,7 +22,6 @@ a:focus-visible, summary:focus-visible { outline: 3px solid #78a7ff; outline-off
 .navigation { min-height: 82px; justify-content: space-between; gap: 24px; }
 .brand { gap: 10px; white-space: nowrap; font-size: 15px; font-weight: 800; letter-spacing: -.5px; }
 .brand-mark { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; }
-.brand-light { font-weight: 500; }
 .brand-dot { color: var(--blue); }
 .nav-links { gap: 34px; font-size: 12px; font-weight: 650; color: #647084; }
 .nav-links a:hover, .text-link:hover, .footer a:hover { color: var(--blue); }
