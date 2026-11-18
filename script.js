@@ -10,6 +10,24 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   });
 });
 
+const contactForm = document.getElementById("contact-form");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const formData = new FormData(contactForm);
+    const subject = `Wiadomość ze strony — ${formData.get("name")}`;
+    const body = [
+      `Imię: ${formData.get("name")}`,
+      `E-mail: ${formData.get("email")}`,
+      "",
+      formData.get("message"),
+    ].join("\n");
+    const mailto = new URLSearchParams({ subject, body });
+    window.location.href = `mailto:g.manuszewski@gmail.com?${mailto.toString()}`;
+  });
+}
+
 const projectGallery = document.getElementById("project-gallery");
 
 if (projectGallery) {

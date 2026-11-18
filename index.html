@@ -86,16 +86,16 @@
         <div class="project-gallery" role="region" aria-label="Galeria projektów">
           <div class="project-grid" id="project-gallery" tabindex="0" aria-label="Projekty. Przewijaj w poziomie.">
             <article class="project-card">
-              <div class="card-art art-automation" aria-hidden="true">
-                <div class="art-grid"></div><div class="automation-flow"><span>⌘</span><i></i><span>⚡</span><i></i><span>✓</span></div>
-                <span class="art-index">01 / AUTOMATYZACJA</span>
+              <div class="card-art project-art" aria-hidden="true">
+                <img src="appsheet.png" alt="">
+                <span class="art-index">01 / GOOGLE APPSHEET</span>
               </div>
               <div class="card-content">
-                <p class="card-category">AUTOMATYZACJA <span>↗</span></p>
-                <h3>Automatyzacja VULCAN</h3>
-                <p>Mniej powtarzalnych zadań, więcej czasu na to, co naprawdę ważne.</p>
-                <details><summary>Szczegóły <span aria-hidden="true">↗</span></summary><p>Przykładowy projekt automatyzacji porządkowania i przetwarzania danych z systemu VULCAN za pomocą Pythona.</p></details>
-                <a class="project-link" href="automatyzacja.html">Więcej przykładów <span aria-hidden="true">↗</span></a>
+                <p class="card-category">APLIKACJE NO-CODE <span>↗</span></p>
+                <h3>Google AppSheet</h3>
+                <p>Aplikacje biznesowe, które porządkują pracę zespołu i automatyzują codzienne zadania.</p>
+                <details><summary>Szczegóły <span aria-hidden="true">↗</span></summary><p>Od formularza i centralnej bazy danych po powiadomienia oraz akceptacje — rozwiązanie dopasowane do procesu.</p></details>
+                <a class="project-link" href="appsheet.html">Więcej przykładów <span aria-hidden="true">↗</span></a>
               </div>
             </article>
             <article class="project-card">
@@ -112,16 +112,16 @@
               </div>
             </article>
             <article class="project-card">
-              <div class="card-art art-zigbee" aria-hidden="true">
-                <div class="zigbee-rings"><span class="zigbee-center">⌂</span><span class="zigbee-node node-one"></span><span class="zigbee-node node-two"></span><span class="zigbee-node node-three"></span></div>
-                <span class="art-index">03 / SMART HOME</span>
+              <div class="card-art project-art" aria-hidden="true">
+                <img src="etl-elt.png" alt="">
+                <span class="art-index">03 / INŻYNIERIA DANYCH</span>
               </div>
               <div class="card-content">
-                <p class="card-category">SMART HOME <span>↗</span></p>
-                <h3>Bramka ZigBee</h3>
-                <p>Inteligentny dom, w którym urządzenia po prostu ze sobą rozmawiają.</p>
-                <details><summary>Szczegóły <span aria-hidden="true">↗</span></summary><p>Przykładowa bramka łącząca urządzenia ZigBee i ułatwiająca tworzenie domowych automatyzacji.</p></details>
-                <a class="project-link" href="smart-home.html">Więcej przykładów <span aria-hidden="true">↗</span></a>
+                <p class="card-category">PRZEPŁYWY DANYCH <span>↗</span></p>
+                <h3>ETL &amp; ELT — proces</h3>
+                <p>Spójny przepływ danych od wielu źródeł do uporządkowanych analiz i raportów.</p>
+                <details><summary>Szczegóły <span aria-hidden="true">↗</span></summary><p>Proces obejmuje pobieranie, walidację, transformację i ładowanie danych — z kontrolą jakości na każdym etapie.</p></details>
+                <a class="project-link" href="etl-elt.html">Więcej przykładów <span aria-hidden="true">↗</span></a>
               </div>
             </article>
             <article class="project-card">
@@ -151,8 +151,27 @@
 
     <section class="contact section" id="kontakt">
       <div class="container contact-box">
-        <div><p class="section-label"><span>03</span> / POROZMAWIAJMY</p><h2>Masz pomysł?<br><span>Porozmawiajmy.</span></h2><p>Najlepsze projekty zaczynają się od dobrej rozmowy.</p></div>
-        <div class="contact-action"><a class="button button-light" href="mailto:g.manuszewski@gmail.com">Napisz wiadomość <span aria-hidden="true">↗</span></a><small>g.manuszewski@gmail.com</small></div>
+        <div class="contact-copy">
+          <p class="section-label"><span>03</span> / POROZMAWIAJMY</p>
+          <h2>Zapraszam <span>do kontaktu.</span></h2>
+          <p>Masz pomysł na aplikację, automatyzację lub pracę z danymi? Napisz albo zadzwoń — chętnie porozmawiam.</p>
+          <div class="contact-details">
+            <a href="tel:+48502581596"><span>TELEFON</span><strong>+48 502 581 596</strong></a>
+            <a href="mailto:g.manuszewski@gmail.com"><span>E-MAIL</span><strong>g.manuszewski@gmail.com</strong></a>
+            <div><span>LOKALIZACJA</span><strong>Toruń, Polska</strong></div>
+          </div>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <h3>Napisz wiadomość</h3>
+          <label for="contact-name">Imię</label>
+          <input id="contact-name" name="name" type="text" autocomplete="name" required>
+          <label for="contact-email">Adres e-mail</label>
+          <input id="contact-email" name="email" type="email" autocomplete="email" required>
+          <label for="contact-message">Wiadomość</label>
+          <textarea id="contact-message" name="message" rows="4" required></textarea>
+          <button class="button button-primary" type="submit">Wyślij wiadomość <span aria-hidden="true">↗</span></button>
+          <p class="form-note">Formularz otworzy Twoją aplikację pocztową.</p>
+        </form>
       </div>
     </section>
   </main>
