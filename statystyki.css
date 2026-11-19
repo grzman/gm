@@ -13,9 +13,12 @@
 .card-kicker { margin: 24px 0 10px; color: var(--turquoise); font-size: 10px; font-weight: 800; letter-spacing: .12em; }
 .login-card h2 { font-size: 31px; }
 .login-card > p:not(.card-kicker) { margin: 14px 0 24px; color: var(--muted); font-size: 13px; line-height: 1.7; }
-.login-button { display: flex; justify-content: space-between; width: 100%; padding: 15px 17px; border: 1px solid rgba(189, 114, 255, .28); border-radius: 9px; background: rgba(189, 114, 255, .12); color: #d5c3e6; font: inherit; font-size: 12px; font-weight: 700; cursor: not-allowed; }
+.login-button, .show-report-button { display: flex; justify-content: space-between; width: 100%; padding: 15px 17px; border: 1px solid rgba(189, 114, 255, .28); border-radius: 9px; background: rgba(189, 114, 255, .12); color: #e7d8f4; font: inherit; font-size: 12px; font-weight: 700; cursor: pointer; }
+.show-report-button { margin-top: 10px; border-color: rgba(85, 244, 227, .3); background: transparent; color: var(--turquoise); }
+.show-report-button:focus-visible { outline: 3px solid #78a7ff; outline-offset: 4px; }
 .login-card > p.login-note { margin: 14px 0 0; color: #a4a6b8; font-size: 11px; }
 .dashboard-preview { padding: 36px; border: 1px solid var(--line); border-radius: 20px; background: rgba(20, 21, 34, .68); }
+.dashboard-preview[hidden] { display: none; }
 .dashboard-heading { display: flex; align-items: end; justify-content: space-between; flex-wrap: wrap; gap: 20px; margin-bottom: 28px; }
 .dashboard-heading .section-label { margin-bottom: 12px; }
 .dashboard-heading h2 { font-size: clamp(28px, 3vw, 38px); }

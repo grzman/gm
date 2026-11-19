@@ -10,6 +10,7 @@
   <title>Statystyki strony — Grzegorz M</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="statystyki.css">
+  <script src="statystyki.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -29,7 +30,7 @@
   <main id="start" class="stats-page">
     <div class="container">
       <a class="back-link" href="index.html">← Wróć do strony głównej</a>
-      <div class="preview-notice"><span>● PODGLĄD</span> Logowanie jest nieaktywne. Dostęp do raportu zależy od uprawnień w Looker Studio.</div>
+      <div class="preview-notice"><span>● DOSTĘP DO RAPORTU</span> Zaloguj się na konto Google, któremu przyznano dostęp do raportu.</div>
 
       <div class="stats-layout">
         <section class="stats-intro" aria-labelledby="stats-title">
@@ -43,13 +44,14 @@
           <div class="card-icon" aria-hidden="true">✦</div>
           <p class="card-kicker">STREFA PRYWATNA</p>
           <h2 id="login-title">Witaj ponownie<span>.</span></h2>
-          <p>Logowanie do panelu jest planowane. Nie chroni jeszcze widocznego poniżej raportu.</p>
-          <button type="button" class="login-button" disabled>Zaloguj się do panelu <span aria-hidden="true">↗</span></button>
-          <p class="login-note">Podgląd: logowanie nie jest jeszcze aktywne.</p>
+          <p>Zaloguj się w Google na konto z dostępem do raportu, a następnie wróć na tę stronę.</p>
+          <a class="login-button" href="https://datastudio.google.com/reporting/2ba8e94a-274d-4fe4-829a-bc44b1524be3/page/oGuDG" target="_blank" rel="noopener noreferrer">Zaloguj się w Google <span aria-hidden="true">↗</span></a>
+          <button type="button" class="show-report-button" id="show-report" aria-controls="dashboard" aria-expanded="false">Pokaż raport na stronie ↓</button>
+          <p class="login-note">Dostęp do danych sprawdza Looker Studio. Jeśli raport się nie wyświetli, otwórz go w Google lub sprawdź uprawnienia konta.</p>
         </section>
       </div>
 
-      <section class="dashboard-preview" aria-labelledby="dashboard-title">
+      <section class="dashboard-preview" id="dashboard" aria-labelledby="dashboard-title" hidden>
         <div class="dashboard-heading">
           <div><p class="section-label"><span>01</span> / WIDOK PANELU</p><h2 id="dashboard-title">Twoja strona <span>w liczbach.</span></h2></div>
           <span class="preview-badge">KAFELKI PRZYKŁADOWE · BEZ DANYCH</span>
@@ -65,9 +67,9 @@
           <a href="https://datastudio.google.com/reporting/2ba8e94a-274d-4fe4-829a-bc44b1524be3/page/oGuDG" target="_blank" rel="noopener noreferrer">Otwórz raport ↗</a>
         </div>
         <div class="report-frame">
-          <iframe title="Raport statystyk odwiedzin w Looker Studio" src="https://datastudio.google.com/embed/reporting/2ba8e94a-274d-4fe4-829a-bc44b1524be3/page/oGuDG" loading="lazy" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+          <iframe title="Raport statystyk odwiedzin w Looker Studio" data-src="https://datastudio.google.com/embed/reporting/2ba8e94a-274d-4fe4-829a-bc44b1524be3/page/oGuDG" loading="lazy" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
         </div>
-        <p class="stats-disclaimer">Kafelki powyżej nie są podłączone do GA4. Raport jest ładowany z usługi Google; jego dostępność zależy od ustawień udostępniania. Logowanie na tej stronie nie jest aktywne.</p>
+        <p class="stats-disclaimer">Kafelki powyżej nie są podłączone do GA4. Dostęp do raportu i danych jest kontrolowany przez Google i ustawienia udostępniania Looker Studio.</p>
       </section>
     </div>
   </main>
