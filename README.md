@@ -4,7 +4,7 @@ Moja strona wizytówka stworzona na GitHub Pages.
 
 ## Podgląd statystyk
 
-`statystyki.html` pozwala otworzyć raport Looker Studio po zalogowaniu na konto Google. Przycisk pokazujący raport nie sprawdza logowania ani nie chroni danych: dostęp egzekwują ustawienia udostępniania w Looker Studio i uprawnienia do źródeł danych. GitHub Pages nie chroni zawartości za pomocą kodu po stronie przeglądarki; publicznie udostępniony raport pozostaje publiczny. Kafelki wskaźników są przykładowe i nie są podłączone do GA4. Jeśli osadzony raport nie działa po zalogowaniu, otwórz go bezpośrednio w Google i sprawdź dostęp oraz ustawienia przeglądarki.
+`statystyki.html` pozwala otworzyć raport Looker Studio po zalogowaniu na konto Google. Przycisk pokazujący raport nie sprawdza logowania ani nie chroni danych: dostęp egzekwują ustawienia udostępniania w Looker Studio i uprawnienia do źródeł danych. GitHub Pages nie chroni zawartości za pomocą kodu po stronie przeglądarki; publicznie udostępniony raport pozostaje publiczny. Jeśli osadzony raport nie działa po zalogowaniu, otwórz go bezpośrednio w Google i sprawdź dostęp oraz ustawienia przeglądarki.
 
 ## Publikacja
 
