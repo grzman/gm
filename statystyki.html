@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Podgląd koncepcji panelu statystyk odwiedzin strony.">
+  <meta name="description" content="Statystyki odwiedzin strony i raport Looker Studio.">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#080910">
   <link rel="icon" type="image/png" href="favicon.png">
@@ -29,7 +29,7 @@
   <main id="start" class="stats-page">
     <div class="container">
       <a class="back-link" href="index.html">← Wróć do strony głównej</a>
-      <div class="preview-notice"><span>● PODGLĄD KONCEPCJI</span> Logowanie i dane nie są jeszcze podłączone.</div>
+      <div class="preview-notice"><span>● PODGLĄD</span> Logowanie jest nieaktywne. Dostęp do raportu zależy od uprawnień w Looker Studio.</div>
 
       <div class="stats-layout">
         <section class="stats-intro" aria-labelledby="stats-title">
@@ -43,7 +43,7 @@
           <div class="card-icon" aria-hidden="true">✦</div>
           <p class="card-kicker">STREFA PRYWATNA</p>
           <h2 id="login-title">Witaj ponownie<span>.</span></h2>
-          <p>Dostęp do panelu będzie przeznaczony dla uprawnionych osób.</p>
+          <p>Logowanie do panelu jest planowane. Nie chroni jeszcze widocznego poniżej raportu.</p>
           <button type="button" class="login-button" disabled>Zaloguj się do panelu <span aria-hidden="true">↗</span></button>
           <p class="login-note">Podgląd: logowanie nie jest jeszcze aktywne.</p>
         </section>
@@ -52,7 +52,7 @@
       <section class="dashboard-preview" aria-labelledby="dashboard-title">
         <div class="dashboard-heading">
           <div><p class="section-label"><span>01</span> / WIDOK PANELU</p><h2 id="dashboard-title">Twoja strona <span>w liczbach.</span></h2></div>
-          <span class="preview-badge">PRZYKŁADOWY UKŁAD · BEZ DANYCH</span>
+          <span class="preview-badge">KAFELKI PRZYKŁADOWE · BEZ DANYCH</span>
         </div>
         <div class="metrics">
           <div class="metric"><span>Użytkownicy</span><strong>—</strong><small>Odwiedzający stronę</small></div>
@@ -60,12 +60,14 @@
           <div class="metric"><span>Wyświetlenia</span><strong>—</strong><small>Odsłony treści</small></div>
           <div class="metric"><span>Zaangażowanie</span><strong>—</strong><small>Aktywność odwiedzających</small></div>
         </div>
-        <div class="report-placeholder">
-          <div class="report-icon" aria-hidden="true">▥</div>
-          <div><h3>Raport Looker Studio</h3><p>Tutaj pojawi się opublikowany raport po skonfigurowaniu dostępu i osadzenia.</p></div>
-          <span class="report-status">OCZEKUJE NA KONFIGURACJĘ</span>
+        <div class="report-heading">
+          <div><h3>Raport Looker Studio</h3><p>Interaktywny raport odwiedzin. Na węższym ekranie możesz przewinąć go w poziomie.</p></div>
+          <a href="https://datastudio.google.com/reporting/2ba8e94a-274d-4fe4-829a-bc44b1524be3/page/oGuDG" target="_blank" rel="noopener noreferrer">Otwórz raport ↗</a>
         </div>
-        <p class="stats-disclaimer">To wyłącznie projekt wizualny. Nie zawiera danych GA4 ani działającego logowania.</p>
+        <div class="report-frame">
+          <iframe title="Raport statystyk odwiedzin w Looker Studio" src="https://datastudio.google.com/embed/reporting/2ba8e94a-274d-4fe4-829a-bc44b1524be3/page/oGuDG" loading="lazy" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+        </div>
+        <p class="stats-disclaimer">Kafelki powyżej nie są podłączone do GA4. Raport jest ładowany z usługi Google; jego dostępność zależy od ustawień udostępniania. Logowanie na tej stronie nie jest aktywne.</p>
       </section>
     </div>
   </main>

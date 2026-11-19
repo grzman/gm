@@ -4,7 +4,7 @@ Moja strona wizytówka stworzona na GitHub Pages.
 
 ## Podgląd statystyk
 
-`statystyki.html` jest wyłącznie projektem wizualnym: nie ma działającego logowania, danych GA4 ani osadzonego raportu. Przed publikacją potrzebna jest zewnętrzna usługa uwierzytelniania i autoryzacji oraz konfiguracja źródła danych i raportu Looker Studio. GitHub Pages nie chroni zawartości za pomocą kodu po stronie przeglądarki. Dostęp do samego raportu i danych źródłowych również musi być ograniczony odpowiednimi uprawnieniami Google; publicznie udostępniony raport nie staje się prywatny dzięki osadzeniu na stronie.
+`statystyki.html` zawiera osadzony raport Looker Studio; jego dostępność zależy od ustawień udostępniania w Google. Kafelki wskaźników są przykładowe i nie są podłączone do GA4, a logowanie nie działa. Przed udostępnieniem prywatnych danych potrzebna jest zewnętrzna usługa uwierzytelniania i autoryzacji. GitHub Pages nie chroni zawartości za pomocą kodu po stronie przeglądarki. Dostęp do samego raportu i danych źródłowych również musi być ograniczony odpowiednimi uprawnieniami Google; publicznie udostępniony raport nie staje się prywatny dzięki osadzeniu na stronie.
 
 ## Publikacja
 
