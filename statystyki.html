@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Podgląd koncepcji panelu statystyk odwiedzin strony.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#080910">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <title>Statystyki strony — Grzegorz M</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="statystyki.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navigation container" aria-label="Nawigacja główna">
+      <a class="brand" href="index.html#start" aria-label="Moje Portfolio — strona główna">
+        <img class="brand-mark" src="gm.jpg" alt="" aria-hidden="true">
+        <span>Grzegorz M</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#start">Strona Główna</a>
+        <a href="index.html#projekty">Moje Projekty</a>
+        <a class="nav-contact" href="index.html#kontakt">Kontakt <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="start" class="stats-page">
+    <div class="container">
+      <a class="back-link" href="index.html">← Wróć do strony głównej</a>
+      <div class="preview-notice"><span>● PODGLĄD KONCEPCJI</span> Logowanie i dane nie są jeszcze podłączone.</div>
+
+      <div class="stats-layout">
+        <section class="stats-intro" aria-labelledby="stats-title">
+          <p class="section-label"><span>●</span> / ANALITYKA PORTFOLIO</p>
+          <h1 id="stats-title">Dane, które <span>opowiadają historię.</span></h1>
+          <p class="stats-lead">Jedno miejsce, w którym sprawdzisz, jak odwiedzający trafiają na stronę i które treści przyciągają ich uwagę.</p>
+          <div class="source-tags"><span>Google Analytics 4</span><span>Looker Studio</span></div>
+        </section>
+
+        <section class="login-card" aria-labelledby="login-title">
+          <div class="card-icon" aria-hidden="true">✦</div>
+          <p class="card-kicker">STREFA PRYWATNA</p>
+          <h2 id="login-title">Witaj ponownie<span>.</span></h2>
+          <p>Dostęp do panelu będzie przeznaczony dla uprawnionych osób.</p>
+          <button type="button" class="login-button" disabled>Zaloguj się do panelu <span aria-hidden="true">↗</span></button>
+          <p class="login-note">Podgląd: logowanie nie jest jeszcze aktywne.</p>
+        </section>
+      </div>
+
+      <section class="dashboard-preview" aria-labelledby="dashboard-title">
+        <div class="dashboard-heading">
+          <div><p class="section-label"><span>01</span> / WIDOK PANELU</p><h2 id="dashboard-title">Twoja strona <span>w liczbach.</span></h2></div>
+          <span class="preview-badge">PRZYKŁADOWY UKŁAD · BEZ DANYCH</span>
+        </div>
+        <div class="metrics">
+          <div class="metric"><span>Użytkownicy</span><strong>—</strong><small>Odwiedzający stronę</small></div>
+          <div class="metric"><span>Sesje</span><strong>—</strong><small>Wizyty w serwisie</small></div>
+          <div class="metric"><span>Wyświetlenia</span><strong>—</strong><small>Odsłony treści</small></div>
+          <div class="metric"><span>Zaangażowanie</span><strong>—</strong><small>Aktywność odwiedzających</small></div>
+        </div>
+        <div class="report-placeholder">
+          <div class="report-icon" aria-hidden="true">▥</div>
+          <div><h3>Raport Looker Studio</h3><p>Tutaj pojawi się opublikowany raport po skonfigurowaniu dostępu i osadzenia.</p></div>
+          <span class="report-status">OCZEKUJE NA KONFIGURACJĘ</span>
+        </div>
+        <p class="stats-disclaimer">To wyłącznie projekt wizualny. Nie zawiera danych GA4 ani działającego logowania.</p>
+      </section>
+    </div>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><span>© 2026 Moje Portfolio</span><span>Zaprojektowane z ciekawością <span class="footer-star">✳</span></span><a href="index.html">Strona główna</a><a href="#start">Do góry ↑</a></div></footer>
+</body>
+</html>
