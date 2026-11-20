@@ -1,6 +1,86 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+  
+<!-- ==================================================
+     GM PORTFOLIO — CONSENT MODE V2
+     Inicjalizacja przed Google Tag Manager
+================================================== -->
+<script>
+(function () {
+  'use strict';
+
+  var key = 'gm_portfolio_analytics_consent_v1';
+  var choice = null;
+
+  try {
+    choice = window.localStorage.getItem(key);
+  } catch (err) {
+    /* Pamięć niedostępna */
+  }
+
+  window.gmConsentChoice =
+    choice === 'granted' ? 'granted' : 'denied';
+
+  window.dataLayer = window.dataLayer || [];
+
+  window.gtag = function () {
+    window.dataLayer.push(arguments);
+  };
+
+  window.gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    functionality_storage: 'granted',
+    security_storage: 'granted',
+    wait_for_update: 500
+  });
+
+  if (window.gmConsentChoice === 'granted') {
+    window.gtag('consent', 'update', {
+      analytics_storage: 'granted'
+    });
+  }
+})();
+</script>
+
+<!-- ==================================================
+     GOOGLE TAG MANAGER
+================================================== -->
+<script>
+(function(w,d,s,l,i){
+  w[l]=w[l]||[];
+  w[l].push({
+    'gtm.start': new Date().getTime(),
+    event: 'gtm.js'
+  });
+
+  var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),
+      dl=l!='dataLayer'?'&l='+l:'';
+
+  j.async=true;
+  j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+
+  f.parentNode.insertBefore(j,f);
+
+})(window,document,'script','dataLayer',
+   'GTM-5FH9C9MZ');
+</script>
+<!-- End Google Tag Manager -->
+
+<!-- ==================================================
+     PRZYWRÓCENIE ZGODY ANALITYCZNEJ
+================================================== -->
+<script>
+if (window.gmConsentChoice === 'granted') {
+  window.dataLayer.push({
+    event: 'gm_analytics_consent_granted'
+  });
+}
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Raport CFO NOVA Components: wykonanie wobec budżetu, prognoza Q1, mostki EBITDA i analiza dla zarządu.">
@@ -12,6 +92,20 @@
   <script src="script.js" defer></script>
 </head>
 <body>
+  
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-5FH9C9MZ"
+      height="0"
+      width="0"
+      style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <header class="site-header">
     <nav class="navigation container" aria-label="Nawigacja główna">
       <a class="brand" href="index.html#start" aria-label="Moje Portfolio — strona główna">
