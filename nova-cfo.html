@@ -170,6 +170,59 @@ if (window.gmConsentChoice === 'granted') {
     </section>
   </main>
 
-  <footer class="footer"><div class="container footer-inner"><span>© 2026 Moje Portfolio</span><span>Zaprojektowane z ciekawością <span class="footer-star">✳</span></span><a href="#start">Do góry ↑</a></div></footer>
+  <footer class="footer"><div class="container footer-inner"><span>© 2026 Moje Portfolio</span><span>Zaprojektowane z ciekawością <span class="footer-star">✳</span></span>
+<button
+  type="button"
+  id="gm-consent-manage"
+  class="gm-consent-manage">
+  Ustawienia prywatności
+</button>
+
+<a href="#start">Do góry ↑</a>
+</div></footer>
+   <aside id="gm-consent-banner" class="gm-consent-banner" role="dialog" aria-modal="false"
+           aria-labelledby="gm-consent-title" aria-describedby="gm-consent-description" hidden>
+      <h2 class="gm-consent-title" id="gm-consent-title">Prywatność i analityka</h2>
+      <p id="gm-consent-description">Za Twoją zgodą używam Google Analytics 4 do analizy
+      odwiedzin portfolio i zainteresowania projektami. Analityka jest opcjonalna.
+      Możesz odmówić i później zmienić decyzję przez „Ustawienia prywatności” w stopce.</p>
+      <div class="gm-consent-actions">
+        <button id="gm-consent-reject" type="button">Odrzucam</button>
+        <button id="gm-consent-accept" type="button">Akceptuję analitykę</button>
+      </div>
+    </aside>
+    <script>
+    (function () {
+      'use strict';
+      var key = 'gm_portfolio_analytics_consent_v1';
+      var banner = document.getElementById('gm-consent-banner');
+      var manage = document.getElementById('gm-consent-manage');
+      function show() { banner.hidden = false; }
+      function save(choice) {
+        var saved = false;
+        try { window.localStorage.setItem(key, choice); saved = true; }
+        catch (err) { /* przy niedostępnej pamięci zgoda jest tylko na bieżącą sesję */ }
+        if (choice === 'denied') {
+          window.gtag('consent', 'update', {analytics_storage: 'denied'});
+        } else {
+          window.gtag('consent', 'update', {analytics_storage: 'granted'});
+        }
+        // Restart strony gwarantuje właściwą kolejność consent → wyzwalacz GTM.
+        // Cofnięcie zgody nie cofa danych wysłanych przed zmianą decyzji.
+        if (choice === 'granted' && !saved) {
+          // Tryb bez localStorage: ze względów prywatności nie włączamy pomiaru.
+          banner.hidden = true;
+          return;
+        }
+        window.location.reload();
+      }
+      document.getElementById('gm-consent-accept').addEventListener('click', function () {save('granted');});
+      document.getElementById('gm-consent-reject').addEventListener('click', function () {save('denied');});
+      manage.addEventListener('click', show);
+      var stored = null;
+      try { stored = window.localStorage.getItem(key); } catch (err) { /* brak zapisu */ }
+      if (stored !== 'granted' && stored !== 'denied') show();
+    })();
+    </script>
 </body>
 </html>
